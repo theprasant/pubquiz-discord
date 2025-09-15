@@ -1,0 +1,31 @@
+{
+    "clientId": "1417205019614380102",
+    "guildId": "1404713311672467488",
+    "allowedguilds": ["1404713311672467488"],
+    "allowedRoles": [],
+    "gDocIDs": {
+        "questionsNlogs": "1HQIIkRvi4CwuscufRU7Bm1Jj80m2Ycn5E-Xl7fCkbmQ",
+        "rules": "1QRu8s-0z5MPHCqG0uQTVoCwfwTjinjxrR90GuQSTUhs"
+    },
+    "gSheetNames": {
+        "questions": "quiz_bot_questions",
+        "logs": "quiz_bot_logs",
+        "rules": "quiz_bot_rules"
+    },
+    "logChannelId": "1404713313392398354",
+    "models": {
+        "gpt-5": {
+            "name": "Gpt 5"
+        },
+        "gpt-5-nano": {
+            "name": "Gpt 5 Nano"
+        },
+        "gpt-5-mini": {
+            "name": "Gpt 4 Mini"
+        },
+        "gemini-2.5-flash": {
+            "name": "Gemini 2.5 Flash"
+        }
+    },
+    "defaultModel": "gpt-5-mini"
+}
