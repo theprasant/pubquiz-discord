@@ -47,17 +47,17 @@ export async function execute(interaction) {
         const comment = interaction.options.getString('comment');
         const model = defaultModel; //interaction.options.getString('model');
 
-        console.log('Selected model:', model);
+        // console.log('Selected model:', model);
 
         const questionData = await getQuestion(category, question);
         const rules = await getRules(category, question, model);
 
         if (!questionData) return await interaction.editReply({ content: "This question doen't exists.", flags: MessageFlags.Ephemeral });
     
-        console.log('questionData:', questionData);
+        // console.log('questionData:', questionData);
         const aiResponse = await getGptResponse(questionData, comment, rules, model);
         // const aiResponse = await getGeminiResponse(questionData, comment, rules);
-        console.log('aiResponse:', aiResponse);
+        // console.log('aiResponse:', aiResponse);
     
         const logsDoc = gDocs.questionsNlogs;
         await logsDoc.loadInfo();
@@ -79,10 +79,10 @@ export async function execute(interaction) {
         };
 
         if(aiResponse.json){
-            console.log('AI Response JSON:', aiResponse.json);
+            // console.log('AI Response JSON:', aiResponse.json);
             await logsSheet.addRow(newRowData);
         } else {
-            console.log('AI Response JSON is empty or invalid');
+            // console.log('AI Response JSON is empty or invalid');
             await logsSheet.addRow({...newRowData, AiResponse: aiResponse.text.slice(0, 5000)});
         }
 
