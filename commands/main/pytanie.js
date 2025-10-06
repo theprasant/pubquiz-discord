@@ -73,7 +73,7 @@ export async function execute(interaction) {
             Comment : comment,
             Verdict : aiResponse.json?.verdict || 'N/A',
             Rationale : aiResponse.json?.rationale || 'N/A',
-            Links : aiResponse.json?.sources ? aiResponse.json.sources.join(' , ') : 'N/A',
+            Links : aiResponse.json?.sources ? '<' + aiResponse.json.sources.join('> , <') + '>' : 'N/A',
             Model: aiResponse.model,
             Latency: `${aiResponse.latency ? (aiResponse.latency/1000).toFixed(2) : 'N/A '} s`
         };
